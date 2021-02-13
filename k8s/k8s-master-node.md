@@ -331,7 +331,7 @@ kubectl get nodes
 
 NAME              STATUS   ROLES    AGE     VERSION
 k8s-master-miro   Ready    master   2m35s   v1.18.8
-k8s-master-miro   Ready    <none>   1m35s   v1.18.8
+k8s-node01-miro   Ready    <none>   1m35s   v1.18.8
 ```
 
 [ [ back ] ](#main)
