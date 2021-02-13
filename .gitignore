@@ -1,0 +1,8 @@
+# git folder
+.git
+
+# Mac
+.DS_Store
+
+# cache
+.cache
