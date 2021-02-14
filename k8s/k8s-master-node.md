@@ -546,17 +546,17 @@ using [make](./scripts/Makefile)
 - download : https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 ```bash
-# get cronjob-jobs delete job
+# get cronjob jobs
 kubectl get cronjob
 kubectl get jobs
-kubectl delete jobs <name>
 
-# extract yaml from cronJob, deployment ecc
+# extract yaml from cronjob, deployment ...
 kubectl get cronjob <name> -o yaml > name.yaml
 kubectl get deployment <name> -o yaml > name.yaml
 
-# delete specified deploy on herlm
+# delete specified job or deployment
 kubectl delete deployment <name>
+kubectl delete jobs <name>
 
 # delete all deploy by yaml and namespace
 kubectl -n <namespace> get all -o yaml | kubectl delete -f -
@@ -566,10 +566,10 @@ kubectl logs --follow <pod-name> -c <container-name>
 kubectl logs --follow <pod-name> -c <container-name> | grep 'ERROR'
 
 #describe nodes
-kubectl describe node <node-name> | grep -i pods
+kubectl describe node <name> | grep -i pods
 
 # get svc enpoints
-kubectl describe svc <service-name> | grep Endpoints
+kubectl describe svc <name> | grep Endpoints
 
 # get edit cronjob deployment
 kubectl edit deployment <name>
@@ -592,10 +592,9 @@ kubectl exec -n <namespace> -it <pod_name> -- /<file_to_execute>
 kubectl -n <namespace> exec -it <pod_name> bash
 
 # port forwarding
-kubectl -n evobilling port-forward svc/<service-name> <service-port>:<local-port>
+kubectl -n <namespace> port-forward svc/<service-name> <service-port>:<local-port>
 
-# copy file from container to localpc
-find . -type f -name "*.pcap"   
+# copy file from container to localpc  
 kubectl cp <pod-name>:/root/<path-file-name> <file-name>
 
 # check cluster expire certification
