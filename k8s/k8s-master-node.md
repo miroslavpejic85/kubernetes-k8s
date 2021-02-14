@@ -540,6 +540,73 @@ using [make](./scripts/Makefile)
 
 <br>
 
+
+## kubectl_cmd
+
+- download : https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+```bash
+# get cronjob-jobs delete job
+kubectl get cronjob
+kubectl get jobs
+kubectl delete jobs <name>
+
+# extract yaml from cronJob, deployment ecc
+kubectl get cronjob <name> -o yaml > name.yaml
+kubectl get deployment <name> -o yaml > name.yaml
+
+# delete specified deploy on herlm
+kubectl delete deployment <name>
+
+# delete all deploy by yaml and namespace
+kubectl -n <namespace> get all -o yaml | kubectl delete -f -
+
+# log real time
+kubectl logs --follow <pod-name> -c <container-name>
+kubectl logs --follow <pod-name> -c <container-name> | grep 'ERROR'
+
+#describe nodes
+kubectl describe node <node-name> | grep -i pods
+
+# get svc enpoints
+kubectl describe svc <service-name> | grep Endpoints
+
+# get edit cronjob deployment
+kubectl edit deployment <name>
+kubectl edit cronjob <name>
+
+# get all namespaces
+kubectl get pods --all-namespaces -o wide
+
+# scale pod
+kubectl scale --replicas=2 deployment <name>
+kubectl scale --replicas=2 deployment <name> -n <namespace>
+
+# create new namespace
+kubectl create namespace <namespace>
+
+# exec from pod
+kubectl exec -n <namespace> -it <pod_name> -- /<file_to_execute>
+
+# enter in bash
+kubectl -n <namespace> exec -it <pod_name> bash
+
+# port forwarding
+kubectl -n evobilling port-forward svc/<service-name> <service-port>:<local-port>
+
+# copy file from container to localpc
+find . -type f -name "*.pcap"   
+kubectl cp <pod-name>:/root/<path-file-name> <file-name>
+
+# check cluster expire certification
+for i in `cat ~/.kube/config |grep -E "certificate-authority-data|client-certificate-data" |sed -E s/^.*:\ //`; do echo $i |base64 -d |openssl x509 -text -noout -in - |grep -A2 Validity ; done
+
+```
+
+[ [ back ] ](#main)
+
+<br>
+
 ## Update_k8s_certs
 
 `todo` test it...

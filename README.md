@@ -4,7 +4,7 @@
 
 **k8s notes**
 
-* [Deploy k8s master-node](./k8s/k8s-master-node.md)
+* [Setup k8s master-node](./k8s/k8s-master-node.md)
 * [Setup k8s storage](./k8s/k8s-storage.md)
 
 <br>
