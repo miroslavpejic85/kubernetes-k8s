@@ -4,11 +4,11 @@
 
 **k8s notes**
 
-* [Setup k8s master-node](./k8s/k8s-master-node.md)
-* [Setup k8s storage](./k8s/k8s-storage.md)
+- [Setup k8s master-node](./k8s/k8s-master-node.md)
+- [Setup k8s storage](./k8s/k8s-storage.md)
 
 <br>
 
 ## Contributing
 
-Pull Requests are welcome! :slightly_smiling_face:  
+Pull Requests are welcome!

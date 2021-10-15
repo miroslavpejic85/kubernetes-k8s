@@ -540,7 +540,6 @@ using [make](./scripts/Makefile)
 
 <br>
 
-
 ## kubectl_cmd
 
 - download : https://kubernetes.io/docs/tasks/tools/install-kubectl/
@@ -594,7 +593,7 @@ kubectl -n <namespace> exec -it <pod_name> bash
 # port forwarding
 kubectl -n <namespace> port-forward svc/<service-name> <service-port>:<local-port>
 
-# copy file from container to localpc  
+# copy file from container to localpc
 kubectl cp <pod-name>:/root/<path-file-name> <file-name>
 
 # check cluster expire certification
